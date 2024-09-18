@@ -339,8 +339,8 @@ function assignTeams(finishOrder, teams) {
 // Display teams in the results section
 function displayTeams(teams) {
     const resultDiv = document.getElementById('teamResults');
-    resultDiv.innerHTML = '<h2>Teams (Based on Race Results):</h2>';
+    resultDiv.innerHTML = '<h2 style="color: white;">Teams (Based on Race Results):</h2>';
     teams.forEach((team, index) => {
-        resultDiv.innerHTML += `<h3>Team ${index + 1}</h3><p>${team.join(', ')}</p>`;
+        resultDiv.innerHTML += `<h3 style="color: white;">Team ${index + 1}</h3><p style="color: white;">${team.join(', ')}</p>`;
     });
 }

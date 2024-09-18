@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뜨거운 여름밤은 가고 남은 건 파드뿐이지만...</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>뜨거운 여름밤은 가고 남은 건 파드뿐이지만...
+        </h1>
+        <form id="teamForm">
+            <label for="names">이름 (콤마로 구분):</label>
+            <input type="text" id="names" placeholder="e.g., Alice, Bob, Charlie" required>
+            <label for="teamCount">조 개수:</label>
+            <input type="number" id="teamCount" min="2" max="50" required>
+            <button type="submit">조 나누기</button>
+        </form>
+
+        <div id="animationArea">
+            <canvas id="ballCanvas"></canvas>
+        </div>
+        
+        <div id="teamResults"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

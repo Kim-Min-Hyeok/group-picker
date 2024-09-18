@@ -54,7 +54,7 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
     }
 
     // Update rails definition
-    const railCount = 10; // Number of rails on each side
+    const railCount = 20; // Number of rails on each side
     const railRadius = 20; // New smaller radius
     const rails = [];
     const finishWidth = 40;

@@ -1,7 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #3e3e3e;
+    /* background-color: #3e3e3e; */
+    background-image: url('https://private-user-images.githubusercontent.com/61306657/368594264-4321f3bb-6a56-4c65-bd87-1955423f3970.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjY2NjczMDksIm5iZiI6MTcyNjY2NzAwOSwicGF0aCI6Ii82MTMwNjY1Ny8zNjg1OTQyNjQtNDMyMWYzYmItNmE1Ni00YzY1LWJkODctMTk1NTQyM2YzOTcwLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MTglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTE4VDEzNDMyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA4ZmU4MjJlOTFjZmFjY2UxNDkxZDVjNzQ3YzM5YTY5OTNmN2RkNzNiYTk2MDJiOGVlMDM3OWI0ZjNiOTFjYjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.ryu797WryuHd-Zc90AV2hJY0R9l56PWzFXXZyQI3sQo');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -29,7 +32,7 @@ input {
 
 button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #636df0;
     color: white;
     border: none;
     font-size: 16px;

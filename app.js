@@ -32,7 +32,7 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
     }));
 
     const obstacles = [];
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 10; i++) {
         obstacles.push({
             x: Math.random() * (canvas.width - 40) + 20,
             y: Math.random() * (canvas.height - 300) + 100,
@@ -339,6 +339,12 @@ function assignTeams(finishOrder, teams) {
 // Display teams in the results section
 function displayTeams(teams) {
     const resultDiv = document.getElementById('teamResults');
+    
+    // 스타일 설정
+    resultDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // 반투명 검정 배경
+    resultDiv.style.padding = '20px'; // 안쪽 여백
+    resultDiv.style.borderRadius = '10px'; // 모서리 둥글게
+
     resultDiv.innerHTML = '<h2 style="color: white;">Teams (Based on Race Results):</h2>';
     teams.forEach((team, index) => {
         resultDiv.innerHTML += `<h3 style="color: white;">Team ${index + 1}</h3><p style="color: white;">${team.join(', ')}</p>`;

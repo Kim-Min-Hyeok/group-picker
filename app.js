@@ -54,7 +54,7 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
     }
 
     // Update rails definition
-    const railCount = 20; // Number of rails on each side
+    const railCount = 15; // Number of rails on each side
     const railRadius = 20; // New smaller radius
     const rails = [];
     const finishWidth = 40;
@@ -202,7 +202,7 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
         ctx.rect(finishX - finishWidth / 2, canvas.height - 50, finishWidth, 50);
         ctx.fillStyle = 'yellow';
         ctx.fill();
-
+    
         // Draw rotating rails
         rails.forEach(rail => {
             ctx.beginPath();
@@ -211,7 +211,6 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
             ctx.lineWidth = 5;
             ctx.stroke();
             
-            // Rail rotation marker
             const markerX = rail.x + Math.cos(rail.angle) * rail.radius;
             const markerY = rail.y + Math.sin(rail.angle) * rail.radius;
             ctx.beginPath();
@@ -221,7 +220,7 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
             
             rail.angle += rail.speed;
         });
-
+    
         obstacles.forEach(obstacle => {
             obstacle.x += obstacle.speedX;
             if (obstacle.x - obstacle.radius < 0 || obstacle.x + obstacle.radius > canvas.width) {
@@ -246,11 +245,11 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
             pillar.angle += pillar.speed;
         });
     
-        balls.forEach(ball => {
+        balls.forEach((ball, index) => {
             if (!ball.finished) {
                 ball.prevX = ball.x;
                 ball.prevY = ball.y;
-                
+    
                 ball.speedY += ball.gravity;
                 ball.x += ball.speedX;
                 ball.y += ball.speedY;
@@ -279,7 +278,7 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
                         resolveRectangleCollision(ball, pillar);
                     }
                 });
-
+    
                 rails.forEach(rail => {
                     if (checkRailCollision(ball, rail)) {
                         resolveRailCollision(ball, rail);
@@ -295,23 +294,29 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
                 ctx.fillStyle = "#fff";
                 ctx.font = "12px Arial";
                 ctx.fillText(ball.name, ball.x - ball.radius, ball.y - ball.radius - 5);
-
-                // Update finish condition
-                if (ball.y + ball.radius >= canvas.height - 50 && 
-                    Math.abs(ball.x - finishX) < finishWidth / 2) {
+    
+                if (ball.y + ball.radius >= canvas.height - 50 && Math.abs(ball.x - finishX) < finishWidth / 2) {
                     ball.finished = true;
-                    finishOrder.push(ball);
+                    assignTeams(ball, teams);
                 }
             }
         });
     
         if (finishOrder.length === balls.length) {
-            assignTeams(finishOrder, teams);
             return;
         }
     
         requestAnimationFrame(gameStep);
     }
+
+    // Assign individual ball to team
+function assignTeams(ball, teams) {
+    const teamIndex = finishOrder.length % teams.length;
+    teams[teamIndex].push(ball.name);
+    finishOrder.push(ball);
+
+    displayTeams(teams);
+}
     
     gameStep();
 });
@@ -346,7 +351,26 @@ function displayTeams(teams) {
     resultDiv.style.borderRadius = '10px'; // 모서리 둥글게
 
     resultDiv.innerHTML = '<h2 style="color: white;">Teams (Based on Race Results):</h2>';
+    
+    // 팀 결과를 담을 컨테이너
+    const teamContainer = document.createElement('div');
+    teamContainer.style.display = 'grid';
+    teamContainer.style.gridTemplateColumns = '1fr 1fr'; // 2개의 열로 나눔
+    teamContainer.style.gap = '20px'; // 팀 간의 간격 추가
+
     teams.forEach((team, index) => {
-        resultDiv.innerHTML += `<h3 style="color: white;">Team ${index + 1}</h3><p style="color: white;">${team.join(', ')}</p>`;
+        // 각 팀을 위한 컨테이너 생성
+        const teamDiv = document.createElement('div');
+        teamDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; // 약간 투명한 흰색 배경
+        teamDiv.style.padding = '10px';
+        teamDiv.style.borderRadius = '5px'; // 둥근 모서리
+        teamDiv.style.color = 'white'; // 글자 색상 설정
+        
+        teamDiv.innerHTML = `<h3>Team ${index + 1}</h3><p>${team.join(', ')}</p>`;
+        teamContainer.appendChild(teamDiv);
     });
+
+    // 팀 컨테이너를 결과에 추가
+    resultDiv.appendChild(teamContainer);
 }
+

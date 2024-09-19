@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>뜨거운 여름밤은 가고 남은 건 파드뿐이지만...
-        </h1>
+        <h1>뜨거운 여름밤은 가고 남은 건 파드뿐이지만...</h1>
+
         <form id="teamForm">
             <label for="names">이름 (콤마로 구분):</label>
             <input type="text" id="names" placeholder="백예은, 이지은, 김현승, ..." required>
@@ -18,11 +18,12 @@
             <button type="submit">조 나누기</button>
         </form>
 
-        <div id="animationArea">
-            <canvas id="ballCanvas"></canvas>
+        <div id="game-and-results">
+            <div id="animationArea">
+                <canvas id="ballCanvas"></canvas>
+            </div>
+            <div id="teamResults"></div>
         </div>
-        
-        <div id="teamResults"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>

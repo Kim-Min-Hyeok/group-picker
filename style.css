@@ -4,23 +4,50 @@ body {
     background-image: url('https://i.pinimg.com/originals/d9/67/28/d96728b92ce2416dc87921d2ac48bebb.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     width: 90%;
-    margin: 20px auto;
-}
-
-#teamForm {
-    margin-bottom: 20px;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 h1 {
-    margin-top: 50px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-h1, label {
+#game-and-results {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#animationArea {
+    width: 70%;
+    height: 800px;
+    border: 1px solid #ccc;
+    background-color: #000;
+}
+
+#teamResults {
+    width: 25%;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
+    border-radius: 10px;
+    text-align: left;
+    height: auto;
+}
+
+form {
+    margin-bottom: 20px;
 }
 
 input {
@@ -36,19 +63,6 @@ button {
     border: none;
     font-size: 16px;
     cursor: pointer;
-}
-
-#animationArea {
-    width: 100%;
-    height: 800px;
-    position: relative;
-    border: 1px solid #ccc;
-    margin-top: 20px;
-    background-color: #000;
-}
-
-#teamResults {
-    margin-top: 20px;
 }
 
 canvas {

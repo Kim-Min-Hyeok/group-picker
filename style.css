@@ -6,7 +6,7 @@ body {
     overflow: hidden;
 }
 
-.slide, .section28 {
+.slide, .section30 {
     width: 100vw;
     /* height: 100vh; */
     position: absolute;
@@ -21,7 +21,7 @@ body {
     object-fit: cover;
 }
 
-.section28 {
+.section30 {
     background-image: url('https://i.pinimg.com/originals/d9/67/28/d96728b92ce2416dc87921d2ac48bebb.jpg');
     background-size: cover;
     background-repeat: no-repeat;

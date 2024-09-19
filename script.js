@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 1;
-    const totalSlides = 36;
+    const totalSlides = 38;
     let inputBuffer = '';
     const pageInfo = document.getElementById('pageInfo');
     const timer = document.getElementById('timer');
@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const secondsInput = document.getElementById('seconds');
     let timerInterval;
     let timerSeconds = 0;
-    const timerSections = [14, 15, 18, 19, 24];
+    const timerSections = [15, 16, 19, 20, 25];
 
     function showSlide(index) {
         if (index < 1) index = totalSlides;
         if (index > totalSlides) index = 1;
-        document.querySelectorAll('.slide, .section28').forEach(slide => slide.style.display = 'none');
+        document.querySelectorAll('.slide, .section30').forEach(slide => slide.style.display = 'none');
         document.querySelector(`#slide${index}`).style.display = 'block';
         currentSlide = index;
         pageInfo.textContent = `Page: ${currentSlide} / ${totalSlides}`;

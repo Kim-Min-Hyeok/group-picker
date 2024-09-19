@@ -1,11 +1,31 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-image: url('https://i.pinimg.com/originals/d9/67/28/d96728b92ce2416dc87921d2ac48bebb.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-color: black;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+
+.slide, .section28 {
+    width: 100vw;
+    /* height: 100vh; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section28 {
+    background-image: url('https://i.pinimg.com/originals/d9/67/28/d96728b92ce2416dc87921d2ac48bebb.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto;
 }
 
 .container {
@@ -54,6 +74,8 @@ input {
     padding: 10px;
     margin: 10px;
     font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -63,9 +85,71 @@ button {
     border: none;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 canvas {
     width: 100%;
     height: 100%;
+}
+
+#timerControls {
+    position: fixed;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+#timerControls input {
+    width: 60px;
+    padding: 8px;
+    margin: 0 5px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#startTimer, #resetTimer {
+    padding: 8px 15px;
+    background-color: #636df0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+#resetTimer {
+    background-color: #f06363;
+}
+
+#timer {
+    position: fixed;
+    top: 30px;  /* Changed from bottom to top */
+    left: 30px;  /* Changed from 50% to 20px */
+    transform: none;  /* Removed transform */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 150px;  /* Increased from 96px */
+    font-weight: bold;
+    z-index: 1000;
+    display: none;
+}
+
+#pageInfo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
 }

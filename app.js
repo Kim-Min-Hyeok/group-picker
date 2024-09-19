@@ -25,11 +25,11 @@ document.getElementById('teamForm').addEventListener('submit', function(event) {
         prevY: 0,
         radius: 15,
         color: getRandomColor(),
-        speedX: (Math.random() * 1 - 0.5) * 0.5,
-        speedY: 0,
+        speedX: (Math.random() * 1 - 0.5) * 2, // 속도 범위를 더 크게 설정
+        speedY: Math.random() * 1 + 0.5, // 최소 속도 0.5 부여
         gravity: 0.05,
         finished: false
-    }));
+    }));    
 
     const obstacles = [];
     for (let i = 0; i < 10; i++) {

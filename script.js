@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const secondsInput = document.getElementById('seconds');
     let timerInterval;
     let timerSeconds = 0;
-    const timerSections = [15, 16, 19, 20, 25];
+    const timerSections = [15, 16, 19, 20, 25, 35, 36];
 
     function showSlide(index) {
         if (index < 1) index = totalSlides;
